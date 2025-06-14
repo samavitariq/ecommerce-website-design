@@ -59,10 +59,6 @@
       const selected = item.getAttribute("data-category");
       console.log("Selected category:", selected);
       wrapper.classList.remove("show");
-
-      // Add your logic here (e.g., filter products)
-      // For example:
-      // filterProductsByCategory(selected);
     });
   });
 
@@ -70,6 +66,27 @@
     wrapper.classList.remove("show");
   });
 }
+// Search functionality
+// document.querySelector(".search-button").addEventListener("click", function () {
+//   const query = document.querySelector(".search").value.toLowerCase();
+//   const category = document.querySelector(".category").value;
+//   const products = document.querySelectorAll(".product-card");
+
+//   products.forEach(product => {
+//     const name = product.dataset.name.toLowerCase();
+//     const productCategory = product.dataset.category;
+
+//     const matchesQuery = name.includes(query);
+//     const matchesCategory = (category === "all" || category === productCategory);
+
+//     if (matchesQuery && matchesCategory) {
+//       product.style.display = "block";
+//     } else {
+//       product.style.display = "none";
+//     }
+//   });
+// });
+
 
 // Call the function
 setupDropdownWithSelection("category-toggle", "category-menu");
@@ -100,5 +117,53 @@ document.getElementById("quoteForm").addEventListener("submit", function(event) 
   event.preventDefault();
   alert("Inquiry sent successfully!");
 });
+// Language switcher functionality
+  const langSwitcher = document.getElementById("langSwitcher");
+  const langList = document.getElementById("language-options");
+  const currentLang = document.getElementById("current-language");
+  const langFlag = document.getElementById("lang-flag");
+
+  langSwitcher.addEventListener("click", () => {
+    langList.style.display = langList.style.display === "block" ? "none" : "block";
+  });
+
+  function changeLanguage(language, flagFile) {
+    currentLang.textContent = language;
+    langFlag.src = `assets/${flagFile}`;
+    langList.style.display = "none";
+  }
+
+  // Close dropdown if clicked outside
+  document.addEventListener("click", (e) => {
+    if (!langSwitcher.contains(e.target)) {
+      langList.style.display = "none";
+    }
+  });
+// Newsletter form submission handler
+  document.addEventListener('DOMContentLoaded', function () {
+    const newsletterForm = document.querySelector('.newsletter-form');
+
+    newsletterForm.addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent actual form submission
+
+      const email = newsletterForm.querySelector('input[name="email"]').value.trim();
+
+      if (!email || !validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      alert('Thank you for subscribing to our newsletter!');
+      newsletterForm.reset(); // Clear the input
+    });
+
+    // Simple email validation
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+  });
+
+
 
 
