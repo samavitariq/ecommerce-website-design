@@ -11,7 +11,7 @@
   <header>
  <div class="container">
     <div class="header-main">
-        <a href="#"><img src="assets/logo-colored.svg" alt="Brand logo" class="logo"></a>
+        <a href="index.html"><img src="assets/logo-colored.svg" alt="Brand logo" class="logo"></a>
 
         <div class="search-bar">
             <input type="text" placeholder="Search for products, brands and more" class="search">
@@ -24,11 +24,11 @@
             <button class="search-button">Search</button>
         </div>
         <div class="header-icons">
-          <button class="icon-btn">
+          <button  class="icon-btn">
             <i class="fa-solid fa-user"></i>
             <span class="icon-label">Profile</span>
           </button>
-          <button class="icon-btn">
+          <button onclick="document.getElementById('quote-section').scrollIntoView({ behavior: 'smooth' })" class="icon-btn">
             <i class="fa-solid fa-message"></i>
             <span class="icon-label">Message</span>
           </button>
@@ -67,11 +67,11 @@
           </div>
         </div>
         
-          <li><a href="#">Hot Offers</a></li>
-          <li><a href="#">Gift Boxes</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Menu Item</a></li>
-          <li><a href="#">Help</a></li>
+          <li><a href="#deal-cards">Hot Offers</a></li>
+          <li><a href="#deal-cards">Gift Boxes</a></li>
+          <li><a href="#extra-services">Projects</a></li>
+          <li><a href="#decor-section">Menu Item</a></li>
+          <li><a href="#quote-section">Help</a></li>
         </ul>
       </nav>
 
@@ -215,7 +215,7 @@
       </div>
 
       <!-- Deals -->
-      <div class="deal-cards">
+      <div class="deal-cards" id="deal-cards">
         <div class="deal-card">
           <img src="assets/8.jpg" alt="Smart Watch">
           <p class="product-names">Smart watches</p>
@@ -246,7 +246,7 @@
   </section>
 
   <!-- Home and Outdoor -->
-  <section class="decor-section">
+  <section class="decor-section" id="decor-section">
     <div class="decor-grid">
       <!-- Left Feature Image -->
       <div class="left-feature">
@@ -429,7 +429,7 @@
       </div>
     </div>
   </section>
-<section class="quote-section">
+<section class="quote-section" id="quote-section">
     <div class="quote-container">
       <div class="quote-left">
         <h2>An easy way to send<br>requests to all suppliers</h2>
@@ -508,7 +508,7 @@
       </div>
     </div>
   </section>
- <div class="services-section">
+ <div class="services-section" id="extra-services">
   <h2>Our extra services</h2>
   <div class="services-grid">
     <div class="service-card">

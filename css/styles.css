@@ -12,14 +12,18 @@
   --white: #fff;
   --gray: #dee2e6;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--text-color);
   background: var(--background-color);
   line-height: 1.5;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .container {
   max-width: 1350px;
   margin: 0 auto;
