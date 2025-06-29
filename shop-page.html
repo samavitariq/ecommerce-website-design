@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/shop-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-...">
+</head>
+<body>
+<header>
+ <div class="container">
+    <div class="header-main">
+        <a href="index.html"><img src="assets/logo-colored.svg" alt="Brand logo" class="logo"></a>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products, brands and more" class="search">
+            <select class="category">
+                <option value="all">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Clothing</option>
+                <option value="home">Home & outdoor</option>
+                </select>
+            <button class="search-button">Search</button>
+        </div>
+        <div class="header-icons">
+          <button  class="icon-btn">
+            <i class="fa-solid fa-user"></i>
+            <span class="icon-label">Profile</span>
+          </button>
+          <button onclick="document.getElementById('quote-section').scrollIntoView({ behavior: 'smooth' })" class="icon-btn">
+            <i class="fa-solid fa-message"></i>
+            <span class="icon-label">Message</span>
+          </button>
+          <button class="icon-btn">
+            <i class="fa-solid fa-heart"></i>
+            <span class="icon-label">Orders</span>
+          </button>
+          <button class="icon-btn"  href="cart-page.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+          <span class="icon-label">My cart</span>
+          </button>
+        </div>
+    </div>
+ </div>
+ </header>
+<div class="navbar">
+  <div class="container nav-container">
+    <!-- LEFT NAV -->
+      <nav class="nav-left">
+        <ul>
+        <!-- All Category Dropdown -->
+        <div class="nav-item dropdown-wrapper">
+          <button class="dropdown-toggle" id="category-toggle">
+          <i class="fa fa-bars"></i> All Categories 
+          </button>
+          <div class="dropdown-menu" id="category-menu">
+            <div class="dropdown-item" data-category="Computer and tech">Computer and tech</div>
+            <div class="dropdown-item" data-category="Automobiles">Automobiles</div>
+            <div class="dropdown-item" data-category="Home interiors">Home interiors</div>
+            <div class="dropdown-item" data-category="Clothes and wear">Clothes and wear</div>
+            <div class="dropdown-item" data-category="Tools, equipments">Tools, equipments</div>
+            <div class="dropdown-item" data-category="Sports and outdoor">Sports and outdoor</div>
+            <div class="dropdown-item" data-category="Animal and pets">Animal and pets</div>
+            <div class="dropdown-item" data-category="Machinery tools">Machinery tools</div>
+            <div class="dropdown-item" data-category="More category">More category</div>
+          </div>
+        </div>
+        
+          <li><a href="#deal-cards">Hot Offers</a></li>
+          <li><a href="#deal-cards">Gift Boxes</a></li>
+          <li><a href="#extra-services">Projects</a></li>
+          <li><a href="shop-page.html">Menu Item</a></li>
+          <li><a href="#quote-section">Help</a></li>
+        </ul>
+      </nav>
+
+      <!-- RIGHT NAV -->
+      <div class="nav-right">
+
+        <!-- Language & Currency -->
+        <div class="dropdown-wrapper">
+          <button class="dropdown-toggle" id="lang-toggle">
+            English, USD <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-menu" id="lang-menu">
+            <div class="dropdown-item">English, USD</div>
+            <div class="dropdown-item">Español, EUR</div>
+            <div class="dropdown-item">Français, EUR</div>
+            <div class="dropdown-item">Deutsch, EUR</div>
+          </div>
+        </div>
+
+        <!-- Shipping / Country -->
+        <div class="dropdown-wrapper">
+          <button class="dropdown-toggle" id="country-toggle"> 
+            Ship to: 
+            <img src="assets/flags/usa.png" class="flag-icon" id="selected-flag" alt="Flag" /><i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-menu" id="country-menu">
+            <div class="dropdown-item" data-flag="assets/flags/usa.png">
+              <img src="assets/flags/usa.png" class="flag-icon" /> United States
+                        </div>
+            <div class="dropdown-item" data-flag="assets/flags/australia.png">
+              <img src="assets/flags/australia.png" class="flag-icon" /> Australia
+                  </div>
+            <div class="dropdown-item" data-flag="assets/flags/china.png">
+              <img src="assets/flags/china.png" class="flag-icon" /> China
+            </div>
+            <div class="dropdown-item" data-flag="assets/flags/dubai.png">
+              <img src="assets/flags/dubai.png" class="flag-icon" /> Dubai
+            </div>
+            <div class="dropdown-item" data-flag="assets/flags/england.png">
+              <img src="assets/flags/england.png" class="flag-icon" /> England
+            </div>
+            <div class="dropdown-item" data-flag="assets/flags/france.png">
+              <img src="assets/flags/france.png" class="flag-icon" /> France
+            </div>
+            <div class="dropdown-item" data-flag="assets/flags/germany.png">
+              <img src="assets/flags/germany.png" class="flag-icon" /> Germany 
+            </div>
+            <div class="dropdown-item" data-flag="assets/flags/scotland.png">
+              <img src="assets/flags/scotland.png" class="flag-icon" />  Scotland
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Breadcrumb Section -->
+<div class="breadcrumb-container">
+  <nav class="breadcrumb">
+    <a href="#">Home</a>
+    <span>&gt;</span>
+    <a href="#">Clothing</a>
+    <span>&gt;</span>
+    <a href="#">Men's wear</a>
+    <span>&gt;</span>
+    <span class="current">Summer clothing</span>
+  </nav>
+</div>
+<div class="container product-page-layout">
+  <!-- Sidebar -->
+  <aside class="filter-panel">
+    <!-- Category -->
+    <div class="filter-section">
+      <h3 onclick="toggleSection(this)">
+        Category <i class="fas fa-chevron-down"></i>
+      </h3>
+      <ul class="collapsible">
+        <li onclick="selectCategory(this)">Mobile accessory</li>
+        <li onclick="selectCategory(this)">Electronics</li>
+        <li onclick="selectCategory(this)">Smart Phones</li>
+        <li onclick="selectCategory(this)">Modern Tech</li>
+        <li class="extra-category" onclick="selectCategory(this)">Home Appliances</li>
+        <li class="extra-category" onclick="selectCategory(this)">Sports & Fitness</li>
+        <li><a href="#" onclick="toggleMoreCategories(event)">See all</a></li>
+      </ul>
+    </div>
+
+    <!-- Brand -->
+    <div class="filter-section">
+      <h3 onclick="toggleSection(this)">
+        Brand <i class="fas fa-chevron-down"></i>
+      </h3>
+      <ul class="collapsible">
+        <li><input type="checkbox" data-label="Samsung">  Samsung</li>
+        <li><input type="checkbox" data-label="Apple">  Apple</li>
+        <li><input type="checkbox" data-label="Huawei">  Huawei </li>
+        <li><input type="checkbox" data-label="Pocco">  Pocco </li>
+        <li><input type="checkbox" data-label="Lenovo">  Lenovo </li>
+        <li class="extra-category"><input type="checkbox" data-label="Redmi">  Redmi</li>
+        <li class="extra-category"><input type="checkbox" data-label="LG">  LG</li>
+        <li><a href="#" onclick="toggleMoreCategories(event)">See all</a></li>
+      </ul>
+    </div>
+
+    <!-- Features -->
+    <div class="filter-section">
+      <h3 onclick="toggleSection(this)">
+        Feature <i class="fas fa-chevron-down"></i>
+      </h3>
+      <ul class="collapsible">
+        <li><input type="checkbox" data-label="Metallic"> Metallic</li>
+        <li><input type="checkbox" data-label="Plastic Cover"> Plastic Cover</li>
+        <li><input type="checkbox" data-label="8GB Ram"> 8GB Ram </li>
+        <li><input type="checkbox" data-label="Super Power"> Super Power</li>
+        <li><input type="checkbox" data-label="Large Memory"> Large Memory</li>
+        <li  class="extra-category"><input type="checkbox" data-label="Has Bluetooth"> Has Bluetooth</li>
+        <li  class="extra-category"><input type="checkbox" data-label="Wireless"> Wireless</li>
+        <li  class="extra-category"><input type="checkbox" data-label="Dual SIM"> Dual SIM</li>
+         <li><a href="#" onclick="toggleMoreCategories(event)">See all</a></li>
+
+      </ul>
+    </div>
+  <div class="filter-section">
+  <div class="price-range-card">
+    <h4 class="title"  onclick="toggleSection(this)">Price range <i class="fas fa-chevron-down"></i></h4>
+    <div class="filter-content">
+        <div class="slider-container">
+          <div class="slider-track" id="sliderTrack"></div>
+            <input type="range" id="minRange" min="0" max="9999" value="0">
+            <input type="range" id="maxRange" min="0" max="9999" value="9999">
+        </div>
+    <div class="price-inputs">
+      <div class="price-box">
+        <label>Min</label>
+        <input type="number" id="minPrice" value="0">
+      </div>
+      <div class="price-box">
+        <label>Max</label>
+        <input type="number" id="maxPrice" value="9999">
+      </div>
+    </div>
+    <button class="apply-btn"><span>Apply</span></button>
+  </div>
+</div>
+</div>
+
+    <!-- Condition -->
+    <div class="filter-section">
+      <h3 onclick="toggleSection(this)">
+        Condition <i class="fas fa-chevron-down"></i>
+      </h3>
+      <ul class="collapsible">
+        <li><input type="radio" name="condition" data-label="Any"> Any</li>
+        <li><input type="radio" name="condition" data-label="Refurbished"> Refurbished</li>
+        <li><input type="radio" name="condition" data-label="Brand new"> Brand new</li>
+        <li><input type="radio" name="condition" data-label="Old items"> Old items</li>
+      </ul>
+    </div>
+
+    <!-- Ratings -->
+    <div class="filter-section">
+      <h3 onclick="toggleSection(this)">
+        Ratings <i class="fas fa-chevron-down"></i>
+      </h3>
+      <ul class="collapsible">
+        <li><input type="checkbox" data-label="5 stars"> <i class="fa-solid fa-star"> </i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></li>
+        <li><input type="checkbox" data-label="4 stars"> <i class="fa-solid fa-star"> </i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i></li>
+        <li><input type="checkbox" data-label="3 stars"> <i class="fa-solid fa-star"> </i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i></li>
+        <li><input type="checkbox" data-label="2 stars"> <i class="fa-solid fa-star"> </i><i class="fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i></li>
+      </ul>
+    </div>
+  </aside>
+
+ <!-- Main Section -->
+  <div class="main">
+    <div class="header">
+      <p>12,911 items in <span>Mobile accessory</span></p>
+      <div class="filters">
+        <label><input type="checkbox"> Verified only</label>
+        <select>
+          <option>Featured</option>
+          <option>Top Rated</option>
+        </select>
+        <div class="view-toggle">
+          
+          <button id="gridViewBtn"  onclick="toggleView('grid')"><i class="fa fa-th"></i></button>
+          <button id="listViewBtn" onclick="toggleView('list')"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+      <div class="selected-filters">
+        <span id="filter-count"></span>
+        <div id="active-filters">
+          <!-- Filter badges will be dynamically inserted here -->
+        </div>
+        <a href="#" id="clear-filters" style="display:none;">Clear all filters</a>
+      </div>
+
+    <div id="listView" class="product-list list-view" >
+<div id="listView" class="product-list list-view">
+  <!-- Product 1 -->
+  <div class="product-card">
+    <img src="assets/1.jpg" class="product-image" alt="Apple iPhone 12 Pro" />
+    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    <div class="product-details">
+      <h3 class="product-title">Apple iPhone 12 Pro – Dreamy Red</h3>
+      <div class="price">
+        <span class="current-price">$999.00</span>
+        <span class="old-price">$1,199.00</span>
+      </div>
+      <div class="rating">
+        <span class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i> 4.8
+        </span>
+        <span class="span-orders">• <strong>2.3K orders</strong> •</span>
+        <i class="free-shipping">Free Shipping</i>
+      </div>
+      <p class="description">Experience top-tier performance with the A14 Bionic chip and professional-grade cameras in a sleek, durable design. Perfect for photography, gaming, and productivity on the go with all-day battery life, cinematic video recording.</p>
+      <a href="#" class="details-link">View details</a>
+    </div>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product-card">
+    <img src="assets/3.jpg" class="product-image" alt="Samsung Galaxy S21 Ultra" />
+    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    <div class="product-details">
+      <h3 class="product-title">Samsung Galaxy S21 Ultra – Phantom Black</h3>
+      <div class="price">
+        <span class="current-price">$1,199.00</span>
+        <span class="old-price">$1,399.00</span>
+      </div>
+      <div class="rating">
+        <span class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0
+        </span>
+        <span class="span-orders">• <strong>1.1K orders</strong> •</span>
+        <i class="free-shipping">Free Shipping</i>
+      </div>
+      <p class="description">Revolutionary 108MP camera, 100x zoom, and 6.8-inch Dynamic AMOLED display. Offers seamless performance with a powerful Snapdragon chip, S Pen support, and incredible battery life, perfect for mobile photography.</p>
+      <a href="#" class="details-link">View details</a>
+    </div>
+  </div>
+
+  <!-- Product 3 -->
+  <div class="product-card">
+    <img src="assets/2.jpg" class="product-image" alt="Google Pixel 5" />
+    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    <div class="product-details">
+      <h3 class="product-title">Google Pixel 5 – Just Black</h3>
+      <div class="price">
+        <span class="current-price">$699.00</span>
+        <span class="old-price">$799.00</span>
+      </div>
+      <div class="rating">
+        <span class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i> 4.6
+        </span>
+        <span class="span-orders">• <strong>860 orders</strong> •</span>
+        <i class="free-shipping">Free Shipping</i>
+      </div>
+      <p class="description">Google's flagship with outstanding camera capabilities, pure Android interface, and guaranteed updates. Lightweight, water-resistant, and packed with smart features for a streamlined mobile experience, ideal for daily use.</p>
+      <a href="#" class="details-link">View details</a>
+    </div>
+  </div>
+
+  <!-- Product 4 -->
+  <div class="product-card">
+    <img src="assets/7.jpg" class="product-image" alt="OnePlus 9 Pro" />
+    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    <div class="product-details">
+      <h3 class="product-title">Lenovo Laptop – IdeaPad 5</h3>
+      <div class="price">
+        <span class="current-price">$969.00</span>
+        <span class="old-price">$1,069.00</span>
+      </div>
+      <div class="rating">
+        <span class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i> 4.7
+        </span>
+        <span class="span-orders">• <strong>790 orders</strong> •</span>
+        <i class="free-shipping">Free Shipping</i>
+      </div>
+      <p class="description">Premium flagship with Hasselblad-tuned cameras and ultra-fast Warp Charge 65T. Smooth 120Hz AMOLED screen and OxygenOS offer a clean and fast experience, making it a power-user favorite for daily performance and gaming.</p>
+      <a href="#" class="details-link">View details</a>
+    </div>
+  </div>
+
+  <!-- Product 5 -->
+  <div class="product-card">
+    <img src="assets/8.jpg" class="product-image" alt="Xiaomi Mi 11" />
+    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    <div class="product-details">
+      <h3 class="product-title">Apple Watch Series 6 – Space Gray</h3>
+      <div class="price">
+        <span class="current-price">$749.00</span>
+        <span class="old-price">$899.00</span>
+      </div>
+      <div class="rating">
+        <span class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i> 4.5
+        </span>
+        <span class="span-orders">• <strong>1.5K orders</strong> •</span>
+        <i class="free-shipping">Free Shipping</i>
+      </div>
+      <p class="description">Packed with Snapdragon 888, ultra-smooth 120Hz AMOLED display, and 108MP triple rear camera setup. It provides a flagship-level experience with stereo sound, wireless charging, and a stylish curved glass design.</p>
+      <a href="#" class="details-link">View details</a>
+    </div>
+  </div>
+
+  <!-- Product 6 -->
+  <div class="product-card">
+    <img src="assets/9.jpg" class="product-image" alt="Sony Xperia 5 II" />
+    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    <div class="product-details">
+      <h3 class="product-title">Smart Headphones – Noise Cancelling</h3>
+      <div class="price">
+        <span class="current-price">$899.00</span>
+        <span class="old-price">$999.00</span>
+      </div>
+      <div class="rating">
+        <span class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i> 4.4
+        </span>
+        <span class="span-orders">• <strong>620 orders</strong> •</span>
+        <i class="free-shipping">Free Shipping</i>
+      </div>
+      <p class="description">Engineered for cinema lovers and gamers with a 21:9 HDR OLED screen, pro camera modes, and powerful stereo speakers. Compact yet powerful, this phone delivers a cinematic and fluid Android experience.</p>
+      <a href="#" class="details-link">View details</a>
+    </div>
+  </div>
+
+  <!-- Product 7 -->
+  <div class="product-card">
+    <img src="assets/5.jpg" class="product-image" alt="Motorola Edge Plus" />
+    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    <div class="product-details">
+      <h3 class="product-title">Gaming Headphones – Black with Great voice</h3>
+      <div class="price">
+        <span class="current-price">$849.00</span>
+        <span class="old-price">$949.00</span>
+      </div>
+      <div class="rating">
+        <span class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i> 4.3
+        </span>
+        <span class="span-orders">• <strong>580 orders</strong> •</span>
+        <i class="free-shipping">Free Shipping</i>
+      </div>
+      <p class="description">Curved Endless Edge display, massive 5000mAh battery, and 108MP camera with Snapdragon 865 chip. Designed for speed and media with an edge-to-edge immersive viewing experience and stereo sound.</p>
+      <a href="#" class="details-link">View details</a>
+    </div>
+  </div>
+
+  <!-- Product 8 -->
+  <div class="product-card">
+    <img src="assets/6.jpg" class="product-image" alt="Realme GT" />
+    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    <div class="product-details">
+      <h3 class="product-title">Canon camera pro  – Black with 150px Focus</h3>
+      <div class="price">
+        <span class="current-price">$549.00</span>
+        <span class="old-price">$649.00</span>
+      </div>
+      <div class="rating">
+        <span class="stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i> 4.2
+        </span>
+        <span class="span-orders">• <strong>450 orders</strong> •</span>
+        <i class="free-shipping">Free Shipping</i>
+      </div>
+      <p class="description">Stylish and powerful with Snapdragon 870 processor, AMOLED 120Hz screen, and vegan leather finish. Realme GT is designed for gamers and trendsetters who demand high performance and unique design.</p>
+      <a href="#" class="details-link">View details</a>
+    </div>
+  </div>
+</div>
+    </div>
+    <div id="gridView" class="product-list grid-view">
+          <!-- Product 1 -->
+<div class="product-card">
+  <div class="image-section">
+    <img src="assets/1.jpg" class="product-image" alt="Apple iPhone 12 Pro – Dreamy Red" />
+  </div>
+  <div class="product-details">
+    <div class="price">
+      <span class="current-price">$799.00</span>
+      <span class="old-price">$999.00</span>
+      <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    </div>
+    <div class="rating">
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <i class="fa-regular fa-star"></i><span class="span-rating"> 4.0 </span>
+    </div>
+    <p class="product-title">Apple iPhone 12 Pro – <br> Dreamy Red, 108MP camera</p>
+    <p class="description">Flagship Android phone with S Pen, 108MP camera, and a stunning AMOLED display.</p>
+    <a href="#" class="details-link">View details</a>
+  </div>
+</div>
+
+<!-- Product 2 -->
+<div class="product-card">
+  <div class="image-section">
+    <img src="assets/4.jpg" class="product-image" alt="Xiaomi Redmi Note 11 Pro" />
+  </div>
+  <div class="product-details">
+    <div class="price">
+      <span class="current-price">$399.00</span>
+      <span class="old-price">$699.00</span>
+      <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    </div>
+    <div class="rating">
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+      <i class="fa-regular fa-star"></i><span class="span-rating"> 3.5</span>
+    </div>
+    <p class="product-title">Redmi Note 11 Pro+ <br>5G 120W Fast Charging</p>
+    <p class="description">Mid-range phone with 120Hz display, 67W charging, and strong performance for everyday tasks.</p>
+    <a href="#" class="details-link">View details</a>
+  </div>
+</div>
+
+<!-- Product 3 -->
+<div class="product-card">
+  <div class="image-section">
+    <img src="assets/3.jpg" class="product-image" alt="Apple MacBook Pro M2" />
+  </div>
+  <div class="product-details">
+    <div class="price">
+      <span class="current-price">$1099.00</span>
+      <span class="old-price">$1299.00</span>
+      <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    </div>
+    <div class="rating">
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i><span class="span-rating"> 5.0</span>
+    </div>
+    <p class="product-title">Samsung Galaxy S22 Ultra <br> 5G 256GB Phantom Black</p>
+    <p class="description">Blazing fast with M2 chip, Retina display, and long battery life. Ideal for creators and coders.</p>
+    <a href="#" class="details-link">View details</a>
+  </div>
+</div>
+
+<!-- Product 4 -->
+<div class="product-card">
+  <div class="image-section">
+    <img src="assets/2.jpg" class="product-image" alt="Lenovo Tab M10 HD" />
+  </div>
+  <div class="product-details">
+    <div class="price">
+      <span class="current-price">$1099.00</span>
+      <span class="old-price">$1299.00</span>
+      <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    </div>
+    <div class="rating">
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i><span class="span-rating"> 3.0</span>
+    </div>
+    <p class="product-title">Lenovo Tab M10 Plus <br> Gen 3 4GB 64GB Wi-Fi</p>
+    <p class="description">Affordable tablet for family use, featuring a 10.1” screen and dual speakers with Dolby Atmos.</p>
+    <a href="#" class="details-link">View details</a>
+  </div>
+</div>
+
+<!-- Product 5 -->
+<div class="product-card">
+  <div class="image-section">
+    <img src="assets/6.jpg" class="product-image" alt="JBL Flip 6 Bluetooth Speaker" />
+  </div>
+  <div class="product-details">
+    <div class="price">
+      <span class="current-price">$1229.00</span>
+      <span class="old-price">$1379.00</span>
+      <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    </div>
+    <div class="rating">
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star-half-stroke"></i><span class="span-rating"> 4.5</span>
+    </div>
+    <p class="product-title"> Canon EOS 2000D <br> DSLR Camera with 18-55mm Lens</p>
+    <p class="description">Portable waterproof speaker with bold sound and deep bass, perfect for outdoor use.</p>
+    <a href="#" class="details-link">View details</a>
+  </div>
+</div>
+
+<!-- Product 6 -->
+<div class="product-card">
+  <div class="image-section">
+    <img src="assets/9.jpg" class="product-image" alt="Dell Inspiron 15 Laptop" />
+  </div>
+  <div class="product-details">
+    <div class="price">
+      <span class="current-price">$1049.00</span>
+      <span class="old-price">$1199.00</span>
+      <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    </div>
+    <div class="rating">
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+      <i class="fa-regular fa-star"></i><span class="span-rating"> 3.5</span>
+    </div>
+    <p class="product-title">Sony WH-CH520 Wireless <br> On-Ear Headphones with Mic</p>
+    <p class="description">Reliable 15.6" laptop with Intel i5, 8GB RAM, and SSD storage for students and professionals.</p>
+    <a href="#" class="details-link">View details</a>
+  </div>
+</div>
+
+<!-- Product 7 -->
+<div class="product-card">
+  <div class="image-section">
+    <img src="assets/7.jpg" class="product-image" alt="Canon EOS 1500D DSLR" />
+  </div>
+  <div class="product-details">
+    <div class="price">
+      <span class="current-price">$1449.00</span>
+      <span class="old-price">$1599.00</span>
+      <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    </div>
+    <div class="rating">
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <i class="fa-regular fa-star"></i><span class="span-rating"> 4.0</span>
+    </div>
+    <p class="product-title">Dell Inspiron 15 3000 <br> i5 12th Gen 8GB 512GB SSD</p>
+    <p class="description">Entry-level DSLR camera with 24.1MP sensor, Wi-Fi, and EF-S lens compatibility.</p>
+    <a href="#" class="details-link">View details</a>
+  </div>
+</div>
+
+<!-- Product 8 -->
+<div class="product-card">
+  <div class="image-section">
+    <img src="assets/8.jpg" class="product-image" alt="Sony WH-CH520 Headphones" />
+  </div>
+  <div class="product-details">
+    <div class="price">
+      <span class="current-price">$259.00</span>
+      <span class="old-price">$389.00</span>
+      <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    </div>
+    <div class="rating">
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i><span class="span-rating"> 3.0 </span>
+    </div>
+    <p class="product-title">Amazfit GTR 4 Smartwatch <br>with Alexa & GPS for fitness</p>
+    <p class="description">On-ear Bluetooth headphones with up to 50 hours battery life and rich sound clarity.</p>
+    <a href="#" class="details-link">View details</a>
+  </div>
+</div>
+
+<!-- Product 9 -->
+<div class="product-card">
+  <div class="image-section">
+    <img src="assets/5.jpg" class="product-image" alt="Fitbit Charge 5" />
+  </div>
+  <div class="product-details">
+    <div class="price">
+      <span class="current-price">$929.00</span>
+      <span class="old-price">$1069.00</span>
+      <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+    </div>
+    <div class="rating">
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+      <i class="fa-regular fa-star"></i><span class="span-rating"> 3.5</span>
+    </div>
+    <p class="product-title">Logitech G435 LIGHTSPEED <br> Wireless Gaming Headset</p>
+    <p class="description">Advanced fitness tracker with GPS, heart rate, sleep tracking, and stress management tools.</p>
+    <a href="#" class="details-link">View details</a>
+  </div>
+</div>
+
+
+    </div>
+    <div class="product-footer-controls">
+      <div class="show-box">
+          <select>
+              <option>Show 10</option>
+              <option>Show 20</option>
+              <option>Show 50</option>
+          </select>
+      </div>
+      <div class="pagination-box">
+          <button class="arrow1">&lt;</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button class="arrow2">&gt;</button>
+      </div>
+  </div>
+  </div>
+  </div>
+<!-- Footer Section -->
+<footer class="footer">
+      <div class="newsletter">
+      <h3>Subscribe on our newsletter</h3>
+      <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+      <form class="newsletter-form">
+        <i class="fa-regular fa-envelope"></i>
+        <input type="email" placeholder="Email" name="email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  <div class="footer-main">
+    <div class="footer-brand">
+      <h2><img src="assets/logo-colored.svg" alt="Brand logo"></h2>
+      <p>Best information about the company goes here but now lorem ipsum is</p>
+      <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div><h4>About</h4>
+        <a href="#">About Us</a>
+        <a href="#">Find store</a>
+        <a href="#">Categories</a>
+        <a href="#">Blogs</a>
+      </div>
+      <div><h4>Partnership</h4>
+        <a href="#">About Us</a>
+        <a href="#">Find store</a>
+        <a href="#">Categories</a>
+        <a href="#">Blogs</a>
+      </div>
+      <div><h4>Information</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Money Refund</a>
+        <a href="#">Shipping</a>
+        <a href="#">Contact us</a>
+      </div>
+      <div><h4>For users</h4>
+        <a href="#">Login</a>
+        <a href="#">Register</a>
+        <a href="#">Settings</a>
+        <a href="#">My Orders</a>
+      </div>
+      <div class="get-app">
+        <h4>Get app</h4>
+        <img src="assets/apple.png" alt="App Store" />
+        <img src="assets/google.png" alt="Play Store" />
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2023 Ecommerce.</span>
+    <div class="language-switcher"  id="langSwitcher">
+      <img id="lang-flag" src="assets/flags/usa.png" alt="US Flag" />
+      <span id="current-language">English</span>
+      <i class="fa-solid fa-chevron-up"></i>
+      <ul id="language-options">
+        <li onclick="changeLanguage('English', 'flags/usa.png')">English</li>
+        <li onclick="changeLanguage('French', 'flags/france.png')">French</li>
+        <li onclick="changeLanguage('Russian', 'flags/russia.png')">Russian</li>
+        <li onclick="changeLanguage('German', 'flags/germany.png')">German</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</main>
+ <script>
+window.addEventListener('DOMContentLoaded', () => {
+  const minSlider = document.getElementById('minRange');
+  const maxSlider = document.getElementById('maxRange');
+  const minPrice = document.getElementById('minPrice');
+  const maxPrice = document.getElementById('maxPrice');
+  const sliderTrack = document.getElementById('sliderTrack');
+
+  function updateSliderTrack() {
+    const min = +minSlider.min;
+    const max = +minSlider.max;
+    const minVal = +minSlider.value;
+    const maxVal = +maxSlider.value;
+
+    const minPercent = ((minVal - min) * 100) / (max - min);
+    const maxPercent = ((maxVal - min) * 100) / (max - min);
+
+    sliderTrack.style.background = `linear-gradient(to right,
+      #a2bbfc 0%,
+      #a2bbfc ${minPercent}%,
+      #0071ce ${minPercent}%,
+      #0071ce ${maxPercent}%,
+      #a2bbfc ${maxPercent}%,
+      #a2bbfc 100%)`;
+  }
+
+  minSlider.addEventListener('input', () => {
+    if (+minSlider.value > +maxSlider.value - 100) {
+      minSlider.value = +maxSlider.value - 100;
+    }
+    minPrice.value = minSlider.value;
+    updateSliderTrack();
+  });
+
+  maxSlider.addEventListener('input', () => {
+    if (+maxSlider.value < +minSlider.value + 100) {
+      maxSlider.value = +minSlider.value + 100;
+    }
+    maxPrice.value = maxSlider.value;
+    updateSliderTrack();
+  });
+
+  updateSliderTrack(); // on page load
+});
+//toggle section
+function toggleView(view) {
+  const list = document.getElementById("productList");
+  if (view === "grid") {
+    list.classList.add("grid-view");
+  } else {
+    list.classList.remove("grid-view");
+  }
+}
+// Toggle grid or list section function
+ function toggleView(view) {
+  const list = document.getElementById("listView");
+  const grid = document.getElementById("gridView");
+  const listBtn = document.getElementById("listViewBtn");
+  const gridBtn = document.getElementById("gridViewBtn");
+
+  if (view === "grid") {
+    list.style.display = "none";
+    grid.style.display = "flex";
+
+    listBtn.classList.remove("active");
+    gridBtn.classList.add("active");
+  } else {
+    list.style.display = "flex";
+    grid.style.display = "none";
+
+    listBtn.classList.add("active");
+    gridBtn.classList.remove("active");
+  }
+}
+
+
+  // Optional: Set default active state
+  window.onload = () => {
+    document.getElementById("listViewBtn").classList.add("active");
+  };
+  const gridBtn = document.getElementById("gridViewBtn");
+const listBtn = document.getElementById("listViewBtn");
+const productList = document.getElementById("productList");
+
+gridBtn.addEventListener("click", () => {
+  productList.classList.add("grid-view");
+});
+
+listBtn.addEventListener("click", () => {
+  productList.classList.remove("grid-view");
+});
+document.querySelectorAll('.fav-btn').forEach(button => {
+  button.addEventListener('click', function () {
+    this.classList.toggle('active');
+
+    const icon = this.querySelector('i');
+    if (icon.classList.contains('fa-regular')) {
+      icon.classList.remove('fa-regular');
+      icon.classList.add('fa-solid');
+    } else {
+      icon.classList.remove('fa-solid');
+      icon.classList.add('fa-regular');
+    }
+  });
+});
+// Pagination
+document.addEventListener("DOMContentLoaded", function () {
+    const paginationContainer = document.querySelector(".product-footer-controls");
+    const pageButtons = Array.from(paginationContainer.querySelectorAll("button"))
+      .filter(btn => !isNaN(btn.textContent)); // Filter only numbered buttons
+    const prevButton = paginationContainer.querySelector("button:first-of-type");
+    const nextButton = paginationContainer.querySelector("button:last-of-type");
+
+    let activeIndex = 0; // Default active index is 0 (first button)
+
+    function updateActive(index) {
+      pageButtons.forEach(btn => btn.classList.remove("active"));
+      if (index >= 0 && index < pageButtons.length) {
+        pageButtons[index].classList.add("active");
+        activeIndex = index;
+      }
+    }
+
+    // Page number buttons
+    pageButtons.forEach((btn, index) => {
+      btn.addEventListener("click", () => updateActive(index));
+    });
+
+    // Previous arrow <
+    prevButton.addEventListener("click", () => {
+      if (activeIndex > 0) {
+        updateActive(activeIndex - 1);
+      }
+    });
+
+    // Next arrow >
+    nextButton.addEventListener("click", () => {
+      if (activeIndex < pageButtons.length - 1) {
+        updateActive(activeIndex + 1);
+      }
+    });
+
+    // Set default active on load
+    updateActive(0);
+  });
+// Clear all filters
+document.addEventListener("DOMContentLoaded", function () {
+  const inputs = document.querySelectorAll("aside input[type='checkbox'], aside input[type='radio']");
+  const filterContainer = document.getElementById("active-filters");
+  const clearAllLink = document.getElementById("clear-filters");
+  const selectedFiltersWrapper = document.querySelector(".selected-filters");
+
+  function updateUI() {
+    const hasFilters = filterContainer.children.length > 0;
+    clearAllLink.style.display = hasFilters ? 'inline' : 'none';
+    selectedFiltersWrapper.classList.toggle("has-filters", hasFilters);
+  }
+
+  function createBadge(label, input) {
+    const badge = document.createElement("span");
+    badge.className = "filter-badge";
+    badge.textContent = label;
+
+    const close = document.createElement("span");
+    close.className = "remove-btn";
+    close.innerHTML = "&times;";
+    badge.appendChild(close);
+
+    close.addEventListener("click", function () {
+      if (input.type === "radio") {
+        input.checked = false;
+        // Also clear any other radio button in the same group
+        const group = document.getElementsByName(input.name);
+        group.forEach(rb => rb.checked = false);
+      } else {
+        input.checked = false;
+      }
+      badge.remove();
+      updateUI();
+    });
+
+    filterContainer.appendChild(badge);
+    updateUI();
+  }
+
+  function handleInputChange(input) {
+    const label = input.dataset.label;
+    const exists = [...filterContainer.children].some(badge =>
+      badge.textContent === label
+    );
+
+    if (input.checked) {
+      if (input.type === "radio") {
+        // Remove any existing badge from same radio group
+        const group = document.getElementsByName(input.name);
+        group.forEach(rb => {
+          const lbl = rb.dataset.label;
+          const badge = [...filterContainer.children].find(b => b.textContent === lbl);
+          if (badge) badge.remove();
+        });
+      }
+
+      if (!exists) {
+        createBadge(label, input);
+      }
+    } else {
+      const badge = [...filterContainer.children].find(b => b.textContent === label);
+      if (badge) badge.remove();
+    }
+
+    updateUI();
+  }
+
+  // Attach listeners
+  inputs.forEach(input => {
+    input.addEventListener("change", () => handleInputChange(input));
+  });
+
+  // Clear all filters
+  clearAllLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    inputs.forEach(input => input.checked = false);
+    filterContainer.innerHTML = "";
+    updateUI();
+  });
+
+  // If inputs are already selected on load
+  inputs.forEach(input => {
+    if (input.checked) {
+      handleInputChange(input);
+    }
+  });
+
+  updateUI();
+});
+function selectCategory(element) {
+  // Toggle "selected" class
+  element.classList.toggle("selected");
+}
+function toggleMoreCategories(event) {
+  event.preventDefault();
+  const extras = document.querySelectorAll('.extra-category');
+  extras.forEach(el => el.classList.toggle('show'));
+}
+
+</script>
+
+ <script src="js/script.js"></script>
+</body>
+</html>

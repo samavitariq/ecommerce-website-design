@@ -164,6 +164,52 @@ document.getElementById("quoteForm").addEventListener("submit", function(event) 
     }
   });
 
+  // Filter checkboxes
+  const filterCheckboxes = document.querySelectorAll('.filter-check');
+  filterCheckboxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+      alert('Filtering by: ' + cb.dataset.filter);
+    });
+  });
 
+  // Price range
+  document.getElementById('applyPrice').addEventListener('click', () => {
+    const min = document.getElementById('minPrice').value;
+    const max = document.getElementById('maxPrice').value;
+    alert('Filtering products between $' + min + ' and $' + max);
+  });
 
+  // Rating filters
+  const ratings = document.querySelectorAll('.rating');
+  ratings.forEach(star => {
+    star.addEventListener('click', () => {
+      alert('Filtering products with rating: ' + star.dataset.stars + ' stars');
+    });
+  });
+function toggleSection(header) {
+    const content = header.nextElementSibling;
+    const icon = header.querySelector('i');
+    if (!content || !icon) return;
+    content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    icon.classList.toggle('fa-chevron-down');
+    icon.classList.toggle('fa-chevron-right');
+  }
+  function toggleMoreCategories(e) {
+  e.preventDefault();
 
+  const link = e.target;
+  const parentList = link.closest('ul');
+  const extras = parentList.querySelectorAll('.extra-category');
+
+  extras.forEach(el => {
+    el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+  });
+
+  link.innerText = (link.innerText === 'See all') ? 'Show less' : 'See all';
+}
+  // Initialize: hide all extra-category by default
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.extra-category').forEach(el => el.style.display = 'none');
+  });
+
+ 
