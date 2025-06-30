@@ -68,11 +68,11 @@
           </div>
         </div>
         
-          <li><a href="#deal-cards">Hot Offers</a></li>
-          <li><a href="#deal-cards">Gift Boxes</a></li>
-          <li><a href="#extra-services">Projects</a></li>
+          <li><a href="index.html#deal-cards">Hot Offers</a></li>
+          <li><a href="index.html#deal-cards">Gift Boxes</a></li>
+          <li><a href="index.html#extra-services">Projects</a></li>
           <li><a href="shop-page.html">Menu Item</a></li>
-          <li><a href="#quote-section">Help</a></li>
+          <li><a href="index.html#quote-section">Help</a></li>
         </ul>
       </nav>
 
@@ -340,18 +340,53 @@
       </ul>
     </div>
   </div>
-    <!-- Footer Section -->
-<footer class="footer">
-      <div class="newsletter">
-      <h3>Subscribe on our newsletter</h3>
-      <p>Get daily news on upcoming offers from many suppliers all over the world</p>
-      <form class="newsletter-form">
-        <i class="fa-regular fa-envelope"></i>
-        <input type="email" placeholder="Email" name="email" required />
-        <button type="submit">Subscribe</button>
-      </form>
+  <div class="related-products-section">
+  <h4>Related products</h4>
+  <div class="related-products">
+    <div class="product-card">
+      <img src="assets/cloth/6.jpg" alt="Wallet">
+      <p>Men's Leather Wallet <br>Original</p>
+      <span>$32.00–$40.00</span>
+    </div>
+    <div class="product-card">
+      <img src="assets/8.jpg" alt="Watch">
+      <p>Smart Watch <br>Original</p>
+      <span>$32.00–$40.00</span>
+    </div>
+    <div class="product-card">
+      <img src="assets/9.jpg" alt="Headphones">
+      <p>Wireless Headphones <br>Original</p>
+      <span>$32.00–$40.00</span>
+    </div>
+    <div class="product-card">
+      <img src="assets/cloth/4.jpg" alt="Shorts">
+      <p>Men's Jeans Shorts <br>Original</p>
+      <span>$32.00–$40.00</span>
+    </div>
+    <div class="product-card">
+      <img src="assets/10.jpg" alt="Kettle">
+      <p>Electric Kettle <br>Original</p>
+      <span>$32.00–$40.00</span>
+    </div>
+    <div class="product-card">
+      <img src="assets/interior/7.jpg" alt="Magazine Rack">
+      <p>NewsPaper Hoder <br>Original</p>
+      <span>$32.00–$40.00</span>
+    </div>
+  </div>
+</div>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+      <div class="promo-text">
+        <h3>Super discount on more than 100 USD</h3>
+        <p>Have you ever finally just write dummy info</p>
+      </div>
+      <a href="shop-page.html" class="shop-now">Shop now</a>
     </div>
 
+<!-- Footer Section -->
+<footer class="footer">
   <div class="footer-main">
     <div class="footer-brand">
       <h2><img src="assets/logo-colored.svg" alt="Brand logo"></h2>
@@ -430,6 +465,12 @@ tabs.forEach(tab => {
     tab.classList.add('active');
     document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
   });
+});
+//related products scroll
+const scrollContainer = document.querySelector('.related-products');
+scrollContainer.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  scrollContainer.scrollLeft += e.deltaY;
 });
 </script>
   <script src="js/script.js"></script>

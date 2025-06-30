@@ -419,8 +419,9 @@ header {
   color: black;
 }
 
-.banner-content button {
+.banner-content a {
   background: white;
+  text-decoration: none;
   color: black;
   border: 1px solid var(--white);
   padding: 10px 16px;
@@ -428,8 +429,10 @@ header {
   cursor: pointer;
   font-size: 16px;
   transition: color 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
 }
-.banner-content button:hover {
+.banner-content a:hover {
   background: #f0f0f0;
   border: #f0f0f0 1px solid;
 }
