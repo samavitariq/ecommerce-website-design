@@ -66,28 +66,6 @@
     wrapper.classList.remove("show");
   });
 }
-// Search functionality
-// document.querySelector(".search-button").addEventListener("click", function () {
-//   const query = document.querySelector(".search").value.toLowerCase();
-//   const category = document.querySelector(".category").value;
-//   const products = document.querySelectorAll(".product-card");
-
-//   products.forEach(product => {
-//     const name = product.dataset.name.toLowerCase();
-//     const productCategory = product.dataset.category;
-
-//     const matchesQuery = name.includes(query);
-//     const matchesCategory = (category === "all" || category === productCategory);
-
-//     if (matchesQuery && matchesCategory) {
-//       product.style.display = "block";
-//     } else {
-//       product.style.display = "none";
-//     }
-//   });
-// });
-
-
 // Call the function
 setupDropdownWithSelection("category-toggle", "category-menu");
   // Set the end date

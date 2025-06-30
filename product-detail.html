@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/shop-page.css">
+    <link rel="stylesheet" href="css/product-detail.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+    <div class="header-main">
+        <a href="index.html"><img src="assets/logo-colored.svg" alt="Brand logo" class="logo"></a>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products, brands and more" class="search">
+            <select class="category">
+                <option value="all">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Clothing</option>
+                <option value="home">Home & outdoor</option>
+                </select>
+            <button class="search-button">Search</button>
+        </div>
+        <div class="header-icons">
+          <button  class="icon-btn">
+            <i class="fa-solid fa-user"></i>
+            <span class="icon-label">Profile</span>
+          </button>
+          <button onclick="document.getElementById('quote-section').scrollIntoView({ behavior: 'smooth' })" class="icon-btn">
+            <i class="fa-solid fa-message"></i>
+            <span class="icon-label">Message</span>
+          </button>
+          <button class="icon-btn">
+            <i class="fa-solid fa-heart"></i>
+            <span class="icon-label">Orders</span>
+          </button>
+          <button class="icon-btn"  href="cart-page.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+          <span class="icon-label">My cart</span>
+          </button>
+        </div>
+    </div>
+ </div>
+ </header>
+<div class="navbar">
+  <div class="container nav-container">
+    <!-- LEFT NAV -->
+      <nav class="nav-left">
+        <ul>
+        <!-- All Category Dropdown -->
+        <div class="nav-item dropdown-wrapper">
+          <button class="dropdown-toggle" id="category-toggle">
+          <i class="fa fa-bars"></i> All Categories 
+          </button>
+          <div class="dropdown-menu" id="category-menu">
+            <div class="dropdown-item" data-category="Computer and tech">Computer and tech</div>
+            <div class="dropdown-item" data-category="Automobiles">Automobiles</div>
+            <div class="dropdown-item" data-category="Home interiors">Home interiors</div>
+            <div class="dropdown-item" data-category="Clothes and wear">Clothes and wear</div>
+            <div class="dropdown-item" data-category="Tools, equipments">Tools, equipments</div>
+            <div class="dropdown-item" data-category="Sports and outdoor">Sports and outdoor</div>
+            <div class="dropdown-item" data-category="Animal and pets">Animal and pets</div>
+            <div class="dropdown-item" data-category="Machinery tools">Machinery tools</div>
+            <div class="dropdown-item" data-category="More category">More category</div>
+          </div>
+        </div>
+        
+          <li><a href="#deal-cards">Hot Offers</a></li>
+          <li><a href="#deal-cards">Gift Boxes</a></li>
+          <li><a href="#extra-services">Projects</a></li>
+          <li><a href="shop-page.html">Menu Item</a></li>
+          <li><a href="#quote-section">Help</a></li>
+        </ul>
+      </nav>
+
+      <!-- RIGHT NAV -->
+      <div class="nav-right">
+
+        <!-- Language & Currency -->
+        <div class="dropdown-wrapper">
+          <button class="dropdown-toggle" id="lang-toggle">
+            English, USD <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-menu" id="lang-menu">
+            <div class="dropdown-item">English, USD</div>
+            <div class="dropdown-item">Español, EUR</div>
+            <div class="dropdown-item">Français, EUR</div>
+            <div class="dropdown-item">Deutsch, EUR</div>
+          </div>
+        </div>
+
+        <!-- Shipping / Country -->
+        <div class="dropdown-wrapper">
+          <button class="dropdown-toggle" id="country-toggle"> 
+            Ship to: 
+            <img src="assets/flags/usa.png" class="flag-icon" id="selected-flag" alt="Flag" /><i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-menu" id="country-menu">
+            <div class="dropdown-item" data-flag="assets/flags/usa.png">
+              <img src="assets/flags/usa.png" class="flag-icon" /> United States
+                        </div>
+            <div class="dropdown-item" data-flag="assets/flags/australia.png">
+              <img src="assets/flags/australia.png" class="flag-icon" /> Australia
+                  </div>
+            <div class="dropdown-item" data-flag="assets/flags/china.png">
+              <img src="assets/flags/china.png" class="flag-icon" /> China
+            </div>
+            <div class="dropdown-item" data-flag="assets/flags/dubai.png">
+              <img src="assets/flags/dubai.png" class="flag-icon" /> Dubai
+            </div>
+            <div class="dropdown-item" data-flag="assets/flags/england.png">
+              <img src="assets/flags/england.png" class="flag-icon" /> England
+            </div>
+            <div class="dropdown-item" data-flag="assets/flags/france.png">
+              <img src="assets/flags/france.png" class="flag-icon" /> France
+            </div>
+            <div class="dropdown-item" data-flag="assets/flags/germany.png">
+              <img src="assets/flags/germany.png" class="flag-icon" /> Germany 
+            </div>
+            <div class="dropdown-item" data-flag="assets/flags/scotland.png">
+              <img src="assets/flags/scotland.png" class="flag-icon" />  Scotland
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Breadcrumb Section -->
+<div class="breadcrumb-container">
+  <nav class="breadcrumb">
+    <a href="#">Home</a>
+    <span>&gt;</span>
+    <a href="#">Clothing</a>
+    <span>&gt;</span>
+    <a href="#">Men's wear</a>
+    <span>&gt;</span>
+    <span class="current">Summer clothing</span>
+  </nav>
+</div>
+<section class="product-section">
+    <div class="product">
+        <div class="product-images">
+          <img id="main-image" src="assets/image34.png" alt="Main Shirt Image" />
+          <div class="thumbnail-images">
+            <img class="small-thumbnail" src="assets/image34.png" onclick="switchImage('assets/image34.png')" />
+            <img class="small-thumbnail" src="assets/image35.png" onclick="switchImage('assets/image35.png')" />
+            <img class="small-thumbnail" src="assets/image36.png" onclick="switchImage('assets/image36.png')" />
+            <img class="small-thumbnail" src="assets/image37.png" onclick="switchImage('assets/image37.png')" />
+            <img class="small-thumbnail" src="assets/image39.png" onclick="switchImage('assets/image39.png')" />
+            <img class="small-thumbnail" src="assets/image40.png" onclick="switchImage('assets/image40.png')" />
+          </div>
+      </div>
+      
+
+    <div class="product-information">
+            <p class="product-checked"><i class="fa-solid fa-check"></i> In stock</p>
+            <h1 class="text-title">Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle</h1>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star yellow"></i>
+                <i class="fa-solid fa-star yellow"></i>
+                <i class="fa-solid fa-star yellow"></i>
+                <i class="fa-solid fa-star yellow"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <span class="ratings">9.3</span>
+              <span class="reviews"><i class="fa-regular fa-message"></i> 32 reviews</span>
+              <span class="solds"><i class="fa-solid fa-basket-shopping"></i> 154 sold</span>
+            </div>
+             <div class="product-prices">
+              <div class="price-box red">
+                <strong>$98.00</strong>
+                <span>50-100 pcs</span>
+              </div>
+              <div class="price-box">
+                <strong>$90.00</strong>
+                <span>100-700 pcs</span>
+              </div>
+              <div class="price-box">
+                <strong>$78.00</strong>
+                <span>700+ pcs</span>
+              </div>
+            </div>
+            <div class="product-description">
+              <p><span class="label">Price:</span> <span class="p1"> Negotiable</span></p>
+              <hr>
+              <p><span class="label">Type:</span> <span class="p2"> Classic shoes</span></p>
+              <p><span class="label">Material:</span> <span class="p3">Plastic material</span></p>
+              <p><span class="label">Design:</span> <span class="p4">Modern nice</span></p>
+              <hr>
+              <p><span class="label">Customization:</span> <span class="p5">Customized logo and design custom packages</span></p>
+              <p><span class="label">Protection:</span> <span class="p6">Refund Policy</span></p>
+              <p><span class="label">Warranty:</span> <span class="p7">2 years full warranty</span></p>
+              <hr>
+            </div>
+
+    </div>
+
+     <div class="seller-section">
+        <div class="prd-seller-card">
+            <div class="seller-header">
+            <div class="seller-avatar">R</div>
+            <div class="seller-info">
+                <h4>Supplier</h4>
+                <p class="seller-name">Guanjoi Trading LLC</p>
+            </div>
+            </div>
+              <hr>
+              <p><img src="assets/flags/germany.png" class="flag-icon"> Germany, Berlin</p>
+              <p><i class="fa-solid fa-shield-halved icon-gray"></i> Verified Seller</p>
+              <p><i class="fa-solid fa-globe icon-gray"></i> Worldwide shipping</p>
+              <button class="btn-primary">Send inquiry</button>
+              <button class="btn-outline"><strong>Seller’s profile</strong></button>
+            </div>
+            <p class="save-later"><i class="fa-regular fa-heart"></i><strong> Save for later</strong></p>
+          </div>
+      </section>
+
+
+  <div class="main-container">
+    <div class="main-content">
+      <div class="tabs">
+        <button class="tab active" data-tab="description">Description</button>
+        <button class="tab" data-tab="reviews">Reviews</button>
+        <button class="tab" data-tab="shipping">Shipping</button>
+        <button class="tab" data-tab="about">About seller</button>
+      </div>
+
+      <div class="tab-content active" id="description">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio porro eaque illo et doloribus nihil,
+              quas, eum corporis similique perspiciatis eveniet cupiditate temporibus sapiente sed praesentium ea quod
+              nostrum suscipit quasi! Nobis doloribus sequi quia odio, dolor ab ex, laboriosam saepe perferendis
+              itaque harum nam, suscipit totam sed? Aliquam, provident?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, eum fuga architecto maiores nesciunt
+              provident unde. Libero, iure perspiciatis dolorum ex molestias laboriosam quos fugiat expedita, et minus
+              omnis voluptate.</p>
+        <table>
+          <tr><td>Model</td><td>#8786867</td></tr>
+          <tr><td>Style</td><td>Classic style</td></tr>
+          <tr><td>Certificate</td><td>ISO-898921212</td></tr>
+          <tr><td>Size</td><td>34mm x 450mm x 19mm</td></tr>
+          <tr><td>Memory</td><td>36GB RAM</td></tr>
+        </table>
+        <ul class="features">
+          <li>✓ Some great feature name here</li>
+          <li>✓ Lorem ipsum dolor sit amet, consectetur</li>
+          <li>✓ Duis aute irure dolor in reprehenderit</li>
+          <li>✓ Some great feature name here</li>
+        </ul>
+      </div>
+            <div class="tab-content" id="reviews">
+            <p>Read what our customers have to say about this product. We value your feedback and strive to improve our offerings.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio porro eaque illo et doloribus nihil,
+                        quas, eum corporis similique perspiciatis eveniet cupiditate temporibus sapiente sed praesentium ea quod
+                        nostrum suscipit quasi! Nobis doloribus sequi quia odio, dolor ab ex, laboriosam saepe perferendis
+                        itaque harum nam, suscipit totam sed? Aliquam, provident?</p>
+            <ul class="review-list">
+                <li>
+                <strong>Ali R.</strong> – <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><br>
+                “Excellent product! Delivered on time and exactly as shown in the pictures. Highly recommended.”
+                </li>
+                <li>
+                <strong>Sana M.</strong> – <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i><br>
+                “Good quality, but packaging could be improved. Overall happy with the purchase.”
+                </li>
+                <li>
+                <strong>Usman K.</strong> – <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-duotone fa-solid fa-star"></i><br>
+                “Product is okay, but delivery was delayed by 3 days. Customer support helped though.”
+                </li>
+                <li>
+                <strong>Hina T.</strong> – <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><br>
+                “Fantastic value for money. Will buy again. The material and style are perfect.”
+                </li>
+            </ul>
+            </div>
+
+            <div class="tab-content" id="shipping">
+            <p>We offer fast, reliable, and trackable shipping across Pakistan. Choose from multiple delivery options at checkout.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio porro eaque illo et doloribus nihil,
+                        quas, eum corporis similique perspiciatis eveniet cupiditate temporibus sapiente sed praesentium ea quod
+                        nostrum suscipit quasi! Nobis doloribus sequi quia odio, dolor ab ex, laboriosam saepe perferendis
+                        itaque harum nam, suscipit totam sed? Aliquam, provident?</p>
+            <table>
+                <tr><td>Standard Shipping</td><td>3–5 Business Days</td></tr>
+                <tr><td>Express Shipping</td><td>1–2 Business Days</td></tr>
+                <tr><td>Same Day (Lahore Only)</td><td>Available if ordered before 12 PM</td></tr>
+                <tr><td>Cash on Delivery</td><td>Available Nationwide</td></tr>
+            </table>
+            <ul class="features">
+                <li>✓ Real-time order tracking</li>
+                <li>✓ SMS and email shipping alerts</li>
+                <li>✓ Free delivery on orders above Rs. 2,000</li>
+                <li>✓ Easy return & refund process</li>
+            </ul>
+            </div>
+
+            <div class="tab-content" id="about">
+            <p>We are a trusted seller with over 5 years of experience in providing high-quality products and exceptional customer service.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio porro eaque illo et doloribus nihil,
+                        quas, eum corporis similique perspiciatis eveniet cupiditate temporibus sapiente sed praesentium ea quod
+                        nostrum suscipit quasi! Nobis doloribus sequi quia odio, dolor ab ex, laboriosam saepe perferendis
+                        itaque harum nam, suscipit totam sed? Aliquam, provident?</p>
+            <table>
+                <tr><td>Seller Name</td><td>SmartBazaar Pvt Ltd</td></tr>
+                <tr><td>Location</td><td>Lahore, Pakistan</td></tr>
+                <tr><td>Since</td><td>2019</td></tr>
+                <tr><td>Return Policy</td><td>7 Days Return on All Items</td></tr>
+            </table>
+            <ul class="features">
+                <li>✓ Verified seller with 4.8-star rating</li>
+                <li>✓ Dedicated customer support team</li>
+                <li>✓ 100% original and authentic products</li>
+                <li>✓ Over 10,000 happy customers</li>
+            </ul>
+            </div>
+
+    </div>
+
+    <div class="sidebar">
+      <h4>You may like</h4>
+      <ul class="suggestions">
+        <li><img src="assets/cloth/7.jpg"> 
+            <div class="suggested-information"> Men Coat Styles <br>Elegant Formals<br><span class="suggested-price">$7.00 - $99.50</span></div>
+        </li>
+        <li><img src="assets/cloth/1.jpg"> 
+            <div class="suggested-information"> Men Shirt Sleeve <br>Polo Contrast <br><span class="suggested-price">$7.00 - $99.50</span></div>
+        </li>
+        <li><img src="assets/cloth/3.jpg"> 
+            <div class="suggested-information"> Men Jackets Sets <br>Camel Brown<br><span class="suggested-price">$7.00 - $99.50</span></div>
+        </li>
+        <li><img src="assets/cloth/2.jpg"> 
+            <div class="suggested-information"> Men Shirt Sleeve <br>Polo Contrast<br><span class="suggested-price">$7.00 - $99.50</span></div>
+        </li>
+        <li><img src="assets/cloth/5.jpg"> 
+            <div class="suggested-information"> New Summer Bags <br> Blue Jeans <br><span class="suggested-price">$7.00 - $99.50</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+    <!-- Footer Section -->
+<footer class="footer">
+      <div class="newsletter">
+      <h3>Subscribe on our newsletter</h3>
+      <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+      <form class="newsletter-form">
+        <i class="fa-regular fa-envelope"></i>
+        <input type="email" placeholder="Email" name="email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  <div class="footer-main">
+    <div class="footer-brand">
+      <h2><img src="assets/logo-colored.svg" alt="Brand logo"></h2>
+      <p>Best information about the company goes here but now lorem ipsum is</p>
+      <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div><h4>About</h4>
+        <a href="#">About Us</a>
+        <a href="#">Find store</a>
+        <a href="#">Categories</a>
+        <a href="#">Blogs</a>
+      </div>
+      <div><h4>Partnership</h4>
+        <a href="#">About Us</a>
+        <a href="#">Find store</a>
+        <a href="#">Categories</a>
+        <a href="#">Blogs</a>
+      </div>
+      <div><h4>Information</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Money Refund</a>
+        <a href="#">Shipping</a>
+        <a href="#">Contact us</a>
+      </div>
+      <div><h4>For users</h4>
+        <a href="#">Login</a>
+        <a href="#">Register</a>
+        <a href="#">Settings</a>
+        <a href="#">My Orders</a>
+      </div>
+      <div class="get-app">
+        <h4>Get app</h4>
+        <img src="assets/apple.png" alt="App Store" />
+        <img src="assets/google.png" alt="Play Store" />
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2023 Ecommerce.</span>
+    <div class="language-switcher"  id="langSwitcher">
+      <img id="lang-flag" src="assets/flags/usa.png" alt="US Flag" />
+      <span id="current-language">English</span>
+      <i class="fa-solid fa-chevron-up"></i>
+      <ul id="language-options">
+        <li onclick="changeLanguage('English', 'flags/usa.png')">English</li>
+        <li onclick="changeLanguage('French', 'flags/france.png')">French</li>
+        <li onclick="changeLanguage('Russian', 'flags/russia.png')">Russian</li>
+        <li onclick="changeLanguage('German', 'flags/germany.png')">German</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script>
+    function switchImage(imageSrc) {
+  document.getElementById("main-image").src = imageSrc;
+}
+const tabs = document.querySelectorAll('.tab');
+const contents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Remove active from all
+    tabs.forEach(t => t.classList.remove('active'));
+    contents.forEach(c => c.classList.remove('active'));
+
+    // Activate current
+    tab.classList.add('active');
+    document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+  });
+});
+</script>
+  <script src="js/script.js"></script>
+</body>
+</html>
